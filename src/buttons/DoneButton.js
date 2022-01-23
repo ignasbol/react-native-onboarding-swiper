@@ -16,7 +16,7 @@ class DoneButton extends React.Component {
         duration: 1000,
         useNativeDriver: true,
       }).start();
-    }, 1000);
+    }, 250);
   }
 
   render() {
