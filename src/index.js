@@ -118,6 +118,7 @@ class Onboarding extends Component {
       alterBottomColor,
       bottomBarHeight,
       bottomBarColor,
+      buttonStyles,
       controlStatusBar,
       showSkip,
       showNext,
@@ -204,6 +205,7 @@ class Onboarding extends Component {
               isLight={isLight}
               bottomBarHeight={bottomBarHeight}
               bottomBarColor={bottomBarColor}
+              buttonStyles={buttonStyles}
               showSkip={showSkip}
               showNext={showNext}
               showDone={showDone}
@@ -266,6 +268,7 @@ Onboarding.propTypes = {
   allowFontScalingButtons: PropTypes.bool,
   titleStyles: Text.propTypes.style,
   subTitleStyles: Text.propTypes.style,
+  buttonStyles: Text.propTypes.style,
   transitionAnimationDuration: PropTypes.number,
   skipToPage: PropTypes.number,
   pageIndexCallback: PropTypes.func,
@@ -295,6 +298,7 @@ Onboarding.defaultProps = {
   allowFontScalingButtons: true,
   titleStyles: null,
   subTitleStyles: null,
+  buttonStyles: null,
   transitionAnimationDuration: 500,
   skipToPage: null,
   pageIndexCallback: null,

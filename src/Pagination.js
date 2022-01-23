@@ -1,4 +1,4 @@
-import { View, StatusBar, I18nManager, Platform } from 'react-native';
+import { View, StatusBar, Text, I18nManager, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -10,6 +10,7 @@ const Pagination = ({
   isLight,
   bottomBarHeight,
   bottomBarColor,
+  buttonStyles,
   controlStatusBar,
   showSkip,
   showNext,
@@ -35,6 +36,7 @@ const Pagination = ({
     <SkipButtonComponent
       isLight={isLight}
       skipLabel={skipLabel}
+      buttonStyles={buttonStyles}
       allowFontScaling={allowFontScaling}
       onPress={() => {
         if (typeof onSkip === 'function') {
@@ -50,6 +52,7 @@ const Pagination = ({
   const NextButtonFinal = showNext && !isLastPage && (
     <NextButtonComponent
       nextLabel={nextLabel}
+      buttonStyles={buttonStyles}
       allowFontScaling={allowFontScaling}
       isLight={isLight}
       onPress={onNext}
@@ -60,6 +63,7 @@ const Pagination = ({
     <DoneButtonComponent
       doneLabel={doneLabel}
       isLight={isLight}
+      buttonStyles={buttonStyles}
       allowFontScaling={allowFontScaling}
       onPress={() => {
         if (typeof onDone === 'function') {
@@ -102,6 +106,7 @@ Pagination.propTypes = {
   isLight: PropTypes.bool.isRequired,
   bottomBarHeight: PropTypes.number.isRequired,
   bottomBarColor: PropTypes.string.isRequired,
+  buttonStyles: Text.propTypes.style,
   showNext: PropTypes.bool.isRequired,
   showSkip: PropTypes.bool.isRequired,
   showDone: PropTypes.bool.isRequired,

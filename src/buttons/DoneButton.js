@@ -20,7 +20,7 @@ class DoneButton extends React.Component {
   }
 
   render() {
-    const { doneLabel, isLight, ...rest } = this.props;
+    const { buttonStyles, doneLabel, isLight, ...rest } = this.props;
     const { fadeAnim } = this.state;
 
     return (
@@ -32,7 +32,7 @@ class DoneButton extends React.Component {
         <TextButton
           size={BUTTON_SIZE}
           style={{ marginRight: MARGIN_RIGHT }}
-          textStyle={getDefaultStyle(isLight)}
+          textStyle={{...getDefaultStyle(isLight), ...buttonStyles}}
           {...rest}
         >
           {doneLabel}
