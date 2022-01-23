@@ -127,6 +127,7 @@ class Onboarding extends Component {
       onDone,
       skipLabel,
       nextLabel,
+      doneLabel,
       allowFontScalingButtons,
       SkipButtonComponent,
       DoneButtonComponent,
@@ -214,6 +215,7 @@ class Onboarding extends Component {
               onNext={this.goNext}
               skipLabel={skipLabel}
               nextLabel={nextLabel}
+              doneLabel={doneLabel}
               allowFontScaling={allowFontScalingButtons}
               SkipButtonComponent={SkipButtonComponent}
               DoneButtonComponent={DoneButtonComponent}
@@ -253,6 +255,7 @@ Onboarding.propTypes = {
   onDone: PropTypes.func,
   skipLabel: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   nextLabel: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  doneLabel: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   SkipButtonComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   DoneButtonComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   NextButtonComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
@@ -279,6 +282,7 @@ Onboarding.defaultProps = {
   showDone: true,
   skipLabel: 'Skip',
   nextLabel: 'Next',
+  doneLabel: 'Done',
   onSkip: null,
   onDone: null,
   SkipButtonComponent: SkipButton,

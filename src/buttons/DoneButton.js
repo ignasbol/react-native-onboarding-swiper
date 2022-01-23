@@ -1,8 +1,8 @@
 import { Animated } from 'react-native';
 import React from 'react';
 
+import TextButton from './TextButton';
 import { BUTTON_SIZE, MARGIN_RIGHT, getDefaultStyle } from './util';
-import SymbolButton from './SymbolButton';
 
 class DoneButton extends React.Component {
   state = {
@@ -20,7 +20,7 @@ class DoneButton extends React.Component {
   }
 
   render() {
-    const { isLight, ...rest } = this.props;
+    const { doneLabel, isLight, ...rest } = this.props;
     const { fadeAnim } = this.state;
 
     return (
@@ -29,18 +29,14 @@ class DoneButton extends React.Component {
           opacity: fadeAnim,
         }}
       >
-        <SymbolButton
+        <TextButton
           size={BUTTON_SIZE}
+          style={{ marginRight: MARGIN_RIGHT }}
           textStyle={getDefaultStyle(isLight)}
-          style={{
-            borderRadius: BUTTON_SIZE / 2,
-            backgroundColor: 'rgba(255, 255, 255, 0.10)',
-            margin: MARGIN_RIGHT,
-          }}
           {...rest}
         >
-          ✓
-        </SymbolButton>
+          {doneLabel}
+        </TextButton>
       </Animated.View>
     );
   }
